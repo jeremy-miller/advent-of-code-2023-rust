@@ -48,7 +48,7 @@ test DAY="":
 run DAY PART:
     @cd {{ DAY }} && cargo run --bin {{PART}}
 
-build-release:
+build-release DAY="":
     @if [ -z "{{ DAY }}" ]; then \
         for directory in `ls -d */`; do \
             cd $directory; \
