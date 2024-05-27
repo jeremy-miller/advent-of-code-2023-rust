@@ -1,2 +1,3 @@
-# advent-of-code-2023-rust
-Rust solutions to "Advent of Code" 2023
+# Advent of Code 2023
+
+Rust solutions to [Advent of Code](https://adventofcode.com/2023) 2023.
