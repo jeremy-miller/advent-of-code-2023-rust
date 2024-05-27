@@ -6,3 +6,7 @@ Rust solutions to [Advent of Code](https://adventofcode.com/2023) 2023.
 
 - [Rust](https://www.rust-lang.org/)
 - [just](https://github.com/casey/just)
+
+## Run
+
+To see available commands: `just`.
