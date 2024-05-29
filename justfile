@@ -5,11 +5,11 @@ lint DAY="":
     @if [ -z "{{ DAY }}" ]; then \
         for directory in `ls -d */`; do \
             cd $directory; \
-            cargo clippy --fix --allow-dirty --allow-staged -- -W clippy::pedantic -W clippy::nursery; \
+            cargo clippy --fix --allow-dirty --allow-staged -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used; \
             cd ..; \
         done \
     else \
-        cd {{ DAY }} && cargo clippy --fix --allow-dirty --allow-staged -- -W clippy::pedantic -W clippy::nursery; \
+        cd {{ DAY }} && cargo clippy --fix --allow-dirty --allow-staged -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used; \
     fi
 
 format DAY="":
