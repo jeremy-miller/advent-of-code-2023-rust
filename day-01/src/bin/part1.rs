@@ -6,15 +6,14 @@ fn main() {
     dbg!(output);
 }
 
-fn run(input: &str) -> String {
+fn run(input: &str) -> u32 {
     let (_, calibration_values) =
         multi::separated_list1(complete::newline, parse_line)(input).expect("error parsing text");
     return calibration_values
         .iter()
         .map(|(first, second)| format!("{first}{second}"))
         .map(|value| value.parse::<u32>().expect("error parsing number"))
-        .sum::<u32>()
-        .to_string();
+        .sum::<u32>();
 }
 
 fn parse_line(input: &str) -> nom::IResult<&str, (char, char)> {
@@ -48,7 +47,7 @@ mod tests {
         let input = include_str!("./part1_test_data.txt");
         let actual_result = run(input);
         let expected_result = 142;
-        assert_eq!(actual_result, expected_result.to_string());
+        assert_eq!(actual_result, expected_result);
     }
 
     #[test]
@@ -56,6 +55,6 @@ mod tests {
         let input = "10\n10a1";
         let actual_result = run(input);
         let expected_result = 21;
-        assert_eq!(actual_result, expected_result.to_string());
+        assert_eq!(actual_result, expected_result);
     }
 }
