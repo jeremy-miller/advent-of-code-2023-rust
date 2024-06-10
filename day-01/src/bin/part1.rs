@@ -1,4 +1,5 @@
-use nom::{character::complete, multi};
+use nom::character::complete;
+use nom::multi;
 
 fn main() {
     let input = include_str!("./part1_data.txt");
